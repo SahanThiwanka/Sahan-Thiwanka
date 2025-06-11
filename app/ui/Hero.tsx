@@ -38,7 +38,7 @@ export function Hero() {
           layout
         >
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 md:text-6xl lg:text-7xl">
-            Hello, I'm <ContainerTextFlip words={words_main} />
+            Hello, I&apos;m <ContainerTextFlip words={words_main} />
           </h1>
           <div className="mt-4 text-lg font-medium text-zinc-600 dark:text-zinc-400 md:text-xl">
             <span>Make your websites look 10x </span>

@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: [
       "api.microlink.io", // Microlink Image Preview
+      "assets.aceternity.com", // Add this domain for image loading
     ],
   },
 };

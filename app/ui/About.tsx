@@ -22,7 +22,7 @@ export function About() {
           About Me
         </h2>
         <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center relative z-20">
-          I'm a web & mobile developer with experience in Flutter, React, and
+          I&apos;m a web & mobile developer with experience in Flutter, React, and
           Next.js. Currently pursuing my MSc in IT at NSBM Green University. I
           love building clean, responsive UIs and exploring new technologies
           like Three.js and blockchain.
