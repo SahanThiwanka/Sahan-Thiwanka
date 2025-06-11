@@ -1,5 +1,6 @@
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import {
   IconBrandGithub,
   IconBrandX,
@@ -37,7 +38,7 @@ export function Contact() {
     {
       title: "Aceternity UI",
       icon: (
-        <img
+        <Image
           src="https://assets.aceternity.com/logo-dark.png"
           width={20}
           height={20}
