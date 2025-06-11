@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { motion } from "motion/react";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
-import { LinkPreview } from "@/components/ui/link-preview";
 import { Hero3DModel } from "@/components/ui/3D";
 
 export function Hero() {
@@ -14,7 +13,10 @@ export function Hero() {
   ];
 
   return (
-    <div id="Home" className="relative flex h-screen w-full items-center justify-center bg-white px-6 dark:bg-black md:px-20">
+    <div
+      id="Home"
+      className="relative flex h-screen w-full items-center justify-center bg-white px-6 dark:bg-black md:px-20"
+    >
       {/* Background grid pattern */}
       <div
         className={cn(
@@ -51,28 +53,8 @@ export function Hero() {
           {/* New content aligned to left */}
           <div className="mt-2 space-y-6">
             <div className="text-neutral-500 dark:text-neutral-400 text-lg md:text-xl">
-              <span>
-                I build modern websites & apps with{" "}
-                <LinkPreview
-                  url="https://tailwindcss.com"
-                  className="font-bold"
-                >
-                  React,
-                </LinkPreview>{" "}
-                <LinkPreview
-                  url="https://framer.com/motion"
-                  className="font-bold"
-                >
-                  Flutter,
-                </LinkPreview>{" "}
-                and emerging tech like{" "}
-                <LinkPreview
-                  url="https://tailwindcss.com"
-                  className="font-bold"
-                >
-                  Three.js.
-                </LinkPreview>
-              </span>
+              I build modern websites & apps with React,Flutter, and emerging
+              tech like Three.js.
             </div>
           </div>
           <div className="mt-6 flex items-center space-x-4">
