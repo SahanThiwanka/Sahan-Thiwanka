@@ -1,79 +1,41 @@
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import {
   IconBrandGithub,
-  IconBrandX,
-  IconExchange,
-  IconHome,
-  IconNewSection,
-  IconTerminal2,
+  IconBrandLinkedin,
+  IconMail,
 } from "@tabler/icons-react";
 import React from "react";
 
 export function Contact() {
   const links = [
     {
-      title: "Home",
-      icon: (
-        <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-
-    {
-      title: "Products",
-      icon: (
-        <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
-      title: "Components",
-      icon: (
-        <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
-      title: "Aceternity UI",
-      icon: (
-        <Image
-          src="https://assets.aceternity.com/logo-dark.png"
-          width={20}
-          height={20}
-          alt="Aceternity Logo"
-        />
-      ),
-      href: "#",
-    },
-    {
-      title: "Changelog",
-      icon: (
-        <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-
-    {
-      title: "Twitter",
-      icon: (
-        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
       title: "GitHub",
       icon: (
-        <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconBrandGithub className="h-full w-full text-neutral-600 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://github.com/yourusername",
+    },
+    {
+      title: "LinkedIn",
+      icon: (
+        <IconBrandLinkedin className="h-full w-full text-blue-700 dark:text-blue-400" />
+      ),
+      href: "https://linkedin.com/in/yourusername",
+    },
+    {
+      title: "Email",
+      icon: (
+        <IconMail className="h-full w-full text-red-600 dark:text-red-400" />
+      ),
+      href: "mailto:youremail@example.com",
     },
   ];
+
   return (
-    <div
+    <section
       id="Contact"
-      className="relative flex h-screen w-full items-center justify-center bg-white px-6 dark:bg-black md:px-20"
+      className="relative flex flex-col items-center justify-center w-full bg-white dark:bg-black px-6 md:px-20 py-20"
     >
       {/* Background grid pattern */}
       <div
@@ -84,16 +46,24 @@ export function Contact() {
           "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
         )}
       />
+      {/* Radial gradient for soft center focus */}
+      <div className="pointer-events-none absolute inset-0 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black" />
 
-      {/* Radial gradient for fade effect */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
-      
-      <div className="relative flex items-center justify-center h-[35rem] w-full">
+      {/* Heading and Subtext */}
+      <div className="relative text-center mb-12">
+        <h2 className="text-3xl font-bold text-black dark:text-white">📬 Contact Me</h2>
+        <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm max-w-md">
+          Feel free to reach out for collaborations, project ideas, or just to say hello.
+        </p>
+      </div>
+
+      {/* Floating Dock */}
+      <div className="relative flex items-center justify-center h-auto w-full">
         <FloatingDock
-          mobileClassName="translate-y-20" // only for demo, remove for production
+          mobileClassName="translate-y-20"
           items={links}
         />
       </div>
-    </div>
+    </section>
   );
 }
