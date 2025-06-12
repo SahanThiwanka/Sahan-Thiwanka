@@ -67,7 +67,7 @@ export function Project() {
       <div className="text-center mb-12 relative">
         <h2 className="text-3xl font-bold text-black dark:text-white">🚀 Projects</h2>
         <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-          Some of the coolest things I've built recently — using cutting-edge tools and tech.
+          Some of the coolest things I&apos;ve built recently — using cutting-edge tools and tech.
         </p>
       </div>
 
