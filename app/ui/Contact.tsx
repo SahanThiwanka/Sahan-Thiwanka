@@ -5,6 +5,7 @@ import {
   IconBrandLinkedin,
   IconMail,
 } from "@tabler/icons-react";
+import { motion } from "motion/react";
 import React from "react";
 
 export function Contact() {
@@ -50,20 +51,27 @@ export function Contact() {
       <div className="pointer-events-none absolute inset-0 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black" />
 
       {/* Heading and Subtext */}
-      <div className="relative text-center mb-12">
-        <h2 className="text-3xl font-bold text-black dark:text-white">📬 Contact Me</h2>
-        <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm max-w-md">
-          Feel free to reach out for collaborations, project ideas, or just to say hello.
-        </p>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <div className="relative mb-12 text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white">
+            📬 Contact Me
+          </h2>
+          <p className="mt-3 text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+            Feel free to reach out for collaborations, project ideas, or just to
+            say hello.
+          </p>
+        </div>
 
-      {/* Floating Dock */}
-      <div className="relative flex items-center justify-center h-auto w-full">
-        <FloatingDock
-          mobileClassName="translate-y-20"
-          items={links}
-        />
-      </div>
+        {/* Floating Dock */}
+        <div className="relative flex items-center justify-center h-auto w-full">
+          <FloatingDock items={links} />
+        </div>
+      </motion.div>
     </section>
   );
 }

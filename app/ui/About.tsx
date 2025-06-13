@@ -4,7 +4,7 @@ import React from "react";
 
 export function About() {
   return (
-    <div id="About" className="relative flex h-screen w-full items-center justify-center bg-white px-6 dark:bg-black md:px-20">
+    <div id="About" className="relative flex  w-full items-center justify-center bg-white px-6 dark:bg-black md:px-20">
       {/* Background grid pattern */}
       <div
         className={cn(
