@@ -15,21 +15,21 @@ export function Contact() {
       icon: (
         <IconBrandGithub className="h-full w-full text-neutral-600 dark:text-neutral-300" />
       ),
-      href: "https://github.com/yourusername",
+      href: "https://github.com/SahanThiwanka",
     },
     {
       title: "LinkedIn",
       icon: (
         <IconBrandLinkedin className="h-full w-full text-blue-700 dark:text-blue-400" />
       ),
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://linkedin.com/in/sahan-thiwanka",
     },
     {
       title: "Email",
       icon: (
         <IconMail className="h-full w-full text-red-600 dark:text-red-400" />
       ),
-      href: "mailto:youremail@example.com",
+      href: "mailto:sahanthiwanka.desilva@gmail.com",
     },
   ];
 

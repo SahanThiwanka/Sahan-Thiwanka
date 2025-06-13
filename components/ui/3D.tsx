@@ -10,7 +10,7 @@ import { Suspense } from "react";
 // 2. Component to load and display your .glb model
 function Model({ url }: { url: string }) {
   const { scene } = useGLTF(url);
-  return <primitive object={scene} scale={1} />;
+  return <primitive object={scene} scale={.8} />;
 }
 
 // 3. Main 3D canvas component to place in your hero section
