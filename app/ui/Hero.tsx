@@ -42,19 +42,20 @@ export function Hero() {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 md:text-6xl lg:text-7xl">
             Hello, I&apos;m <ContainerTextFlip words={words_main} />
           </h1>
-          <div className="mt-4 text-lg font-medium text-zinc-600 dark:text-zinc-400 md:text-xl">
+
+          <div className="mt-5 space-y-6">
+            <div className="text-neutral-500 dark:text-neutral-400 text-lg md:text-xl">
+              I build modern websites & apps with React, Flutter, and emerging
+              tech like Three.js.
+            </div>
+          </div>
+
+          <div className="mt-1 text-lg font-medium text-zinc-600 dark:text-zinc-400 md:text-xl">
             <span>Make your websites look 10x </span>
             <ContainerTextFlip
               className="mt-4 text-lg font-medium md:text-xl"
               words={words}
             />
-          </div>
-
-          <div className="mt-2 space-y-6">
-            <div className="text-neutral-500 dark:text-neutral-400 text-lg md:text-xl">
-              I build modern websites & apps with React, Flutter, and emerging
-              tech like Three.js.
-            </div>
           </div>
 
           {/* Buttons */}
@@ -74,7 +75,11 @@ export function Hero() {
               </span>
             </button>
 
-            <a href="/Sahan Thiwanka CV Resume.pdf"  target="_blank" rel="noopener noreferrer">
+            <a
+              href="/Sahan Thiwanka CV Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFB6B9_0%,#FF6F61_50%,#FFB6B9_100%)]" />
                 <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
