@@ -2,15 +2,15 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { Suspense, useRef, } from "react";
+import { Suspense, useRef } from "react";
+import * as THREE from "three";
 
 function Model({ url }: { url: string }) {
   const { scene } = useGLTF(url);
-  const ref = useRef<any>(null); // Just use 'any' or 'THREE.Group'
+  const ref = useRef<THREE.Group>(null);
 
-  // Auto oscillate the model (unless user is rotating)
   useFrame(({ clock }) => {
-    if (ref.current && !ref.current.userData.isInteracting) {
+    if (ref.current && !(ref.current.userData.isInteracting as boolean)) {
       const angle = Math.sin(clock.getElapsedTime() * 1.2) * 0.4;
       ref.current.rotation.y = angle;
     }
@@ -20,7 +20,7 @@ function Model({ url }: { url: string }) {
 }
 
 export function Hero3DModel() {
-  const orbitRef = useRef<any>(null);
+  const orbitRef = useRef<THREE.Group>(null);
 
   return (
     <div className="w-full h-[500px] md:h-full">
@@ -31,17 +31,19 @@ export function Hero3DModel() {
           <Model url="/models/pc-on-desk.glb" />
         </Suspense>
         <OrbitControls
-          ref={orbitRef}
+          ref={orbitRef as any} // OrbitControls doesn't expose a default ref type
           enableZoom={false}
           enableRotate={true}
           onStart={() => {
-            if (orbitRef.current) {
-              orbitRef.current.object.userData.isInteracting = true;
+            const obj = (orbitRef.current as any)?.object as THREE.Object3D;
+            if (obj) {
+              obj.userData.isInteracting = true;
             }
           }}
           onEnd={() => {
-            if (orbitRef.current) {
-              orbitRef.current.object.userData.isInteracting = false;
+            const obj = (orbitRef.current as any)?.object as THREE.Object3D;
+            if (obj) {
+              obj.userData.isInteracting = false;
             }
           }}
         />
@@ -49,4 +51,3 @@ export function Hero3DModel() {
     </div>
   );
 }
-
