@@ -5,11 +5,11 @@ import React from "react";
 
 const demoItems = [
   {
-    title: "Aceternity UI",
-    description: "Customizable Tailwind CSS and Framer Motion Components.",
-    href: "https://twitter.com/mannupaaji",
-    image: "/images/test.png",
-    techStack: ["Tailwind CSS", "Framer Motion", "React"],
+    title: "Solar Monitoring System",
+    description: "Creating solar monitoring system using tcp/ip model and raspberry pi for university iot project",
+    href: "https://github.com/SahanThiwanka/solar-monitoring-system?tab=readme-ov-file",
+    image: "https://user-images.githubusercontent.com/73154273/192801439-bc606b06-782d-47f9-84a6-1f0333d3ae91.png",
+    techStack: [ "HTML", "JavaScript","PHP", "Raspberry Pi", "TCP/IP", "IoT"," CSS","Bootstrap","Sensor Integration"],
   },
   {
     title: "Next.js Boilerplate",
