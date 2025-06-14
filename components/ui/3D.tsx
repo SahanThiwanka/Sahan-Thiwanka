@@ -2,15 +2,17 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
+import { OrbitControls as OrbitControlsImpl } from "three-stdlib";
+
 import { Suspense, useRef } from "react";
 import * as THREE from "three";
 
 function Model({ url }: { url: string }) {
   const { scene } = useGLTF(url);
-  const ref = useRef<THREE.Group>(null);
+  const ref = useRef<THREE.Group>(scene as THREE.Group);
 
   useFrame(({ clock }) => {
-    if (ref.current && !(ref.current.userData.isInteracting as boolean)) {
+    if (ref.current && !ref.current.userData.isInteracting) {
       const angle = Math.sin(clock.getElapsedTime() * 1.2) * 0.4;
       ref.current.rotation.y = angle;
     }
@@ -20,7 +22,15 @@ function Model({ url }: { url: string }) {
 }
 
 export function Hero3DModel() {
-  const orbitRef = useRef<THREE.Group>(null);
+  const orbitRef = useRef<OrbitControlsImpl>(null);
+
+  const setUserInteracting = (isInteracting: boolean) => {
+    const controls = orbitRef.current;
+    const targetObject = controls?.object;
+    if (targetObject) {
+      targetObject.userData.isInteracting = isInteracting;
+    }
+  };
 
   return (
     <div className="w-full h-[500px] md:h-full">
@@ -31,21 +41,11 @@ export function Hero3DModel() {
           <Model url="/models/pc-on-desk.glb" />
         </Suspense>
         <OrbitControls
-          ref={orbitRef as any} // OrbitControls doesn't expose a default ref type
+          ref={orbitRef}
           enableZoom={false}
           enableRotate={true}
-          onStart={() => {
-            const obj = (orbitRef.current as any)?.object as THREE.Object3D;
-            if (obj) {
-              obj.userData.isInteracting = true;
-            }
-          }}
-          onEnd={() => {
-            const obj = (orbitRef.current as any)?.object as THREE.Object3D;
-            if (obj) {
-              obj.userData.isInteracting = false;
-            }
-          }}
+          onStart={() => setUserInteracting(true)}
+          onEnd={() => setUserInteracting(false)}
         />
       </Canvas>
     </div>
