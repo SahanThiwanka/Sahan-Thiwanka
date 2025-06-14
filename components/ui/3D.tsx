@@ -2,7 +2,7 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useRef, } from "react";
 
 function Model({ url }: { url: string }) {
   const { scene } = useGLTF(url);
