@@ -5,47 +5,20 @@ import React from "react";
 
 const demoItems = [
   {
+    title: "Blockchain-based-healthcare-application",
+    description: "A decentralized healthcare application using blockchain technology for secure patient data management.",
+    href: "https://medical-records-flame.vercel.app/",
+    image: "/images/med.png",
+    techStack: [ "Blockchain", "Smart Contracts", "Ethereum", "Solidity", "Web3.js", "IPFS", "React", "Node.js"],
+  },
+  {
     title: "Solar Monitoring System",
     description: "Creating solar monitoring system using tcp/ip model and raspberry pi for university iot project",
     href: "https://github.com/SahanThiwanka/solar-monitoring-system?tab=readme-ov-file",
     image: "https://user-images.githubusercontent.com/73154273/192801439-bc606b06-782d-47f9-84a6-1f0333d3ae91.png",
     techStack: [ "HTML", "JavaScript","PHP", "Raspberry Pi", "TCP/IP", "IoT"," CSS","Bootstrap","Sensor Integration"],
   },
-  {
-    title: "Next.js Boilerplate",
-    description: "Production-ready starter template for modern web apps.",
-    href: "https://github.com/vercel/next.js",
-    image: "/images/test.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
-    {
-    title: "Next.js Boilerplate",
-    description: "Production-ready starter template for modern web apps.",
-    href: "https://github.com/vercel/next.js",
-    image: "/images/test.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
-    {
-    title: "Next.js Boilerplate",
-    description: "Production-ready starter template for modern web apps.",
-    href: "https://github.com/vercel/next.js",
-    image: "/images/test.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
-    {
-    title: "Next.js Boilerplate",
-    description: "Production-ready starter template for modern web apps.",
-    href: "https://github.com/vercel/next.js",
-    image: "/images/test.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
-    {
-    title: "Next.js Boilerplate",
-    description: "Production-ready starter template for modern web apps.",
-    href: "https://github.com/vercel/next.js",
-    image: "/images/test.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
+  
 ];
 
 export function Project() {
@@ -64,7 +37,7 @@ export function Project() {
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
 
       {/* Section Heading */}
-      <div className="text-center mb-12 relative">
+      <div className="text-center mb-20 relative">
         <h2 className="text-3xl font-bold text-black dark:text-white">🚀 Projects</h2>
         <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
           Some of the coolest things I&apos;ve built recently — using cutting-edge tools and tech.
@@ -75,7 +48,7 @@ export function Project() {
       <div className="flex flex-wrap justify-center gap-18 gap-y-25">
         {demoItems.map((item, index) => (
           <PinContainer key={index} title={item.title} href={item.href}>
-            <div className="flex basis-full flex-col p-4 text-slate-100/50 sm:basis-1/2 w-[20rem] h-auto rounded-xl bg-white dark:bg-neutral-900 shadow-md">
+            <div className="flex basis-full flex-col p-4 text-slate-100/50 sm:basis-1/2 w-[20rem] h-[25rem] rounded-xl bg-white dark:bg-neutral-900 shadow-md">
               <Image
                 src={item.image}
                 alt={item.title}
