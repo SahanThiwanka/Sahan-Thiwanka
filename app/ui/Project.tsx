@@ -9,7 +9,7 @@ const demoItems = [
     description: "A decentralized healthcare application using blockchain technology for secure patient data management.",
     href: "https://medical-records-flame.vercel.app/",
     image: "/images/med.png",
-    techStack: [ "Blockchain", "Smart Contracts", "Ethereum", "Solidity", "Web3.js", "IPFS", "React", "Node.js"],
+    techStack: [ "Blockchain", "Smart Contracts", "Ethereum", "Solidity", "Ethers.js", "IPFS", "Next.js", "Tailwind CSS"],
   },
   {
     title: "Solar Monitoring System",
