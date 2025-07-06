@@ -76,7 +76,7 @@ export function Hero() {
             </button>
 
             <a
-              href="/Sahan Thiwanka CV Resume.pdf"
+              href="/Sahan Thiwanka.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
